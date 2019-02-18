@@ -3,7 +3,7 @@ const client = new Discord.Client();
  
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-   client.user.setActivity("play",{type: 'WATCHING'})
+   client.user.setActivity("1play",{type: 'WATCHING'})
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -37,7 +37,7 @@ const queue = new Map();
  
  
  
-var prefix = "+" 
+var prefix = "1" 
 client.on('message', async msg => {
     if (msg.author.bot) return undefined;
    
@@ -153,7 +153,7 @@ ${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}
             return msg.channel.send('تم إيقاف الموسيقى مؤقتا!');
         }
         return msg.channel.send('لا يوجد شيء حالي ف العمل.');
-    } else if (command === "resume") {
+    } else if (command === "تشغيل") {
         if (serverQueue && !serverQueue.playing) {
             serverQueue.playing = true;
             serverQueue.connection.dispatcher.resume();
@@ -260,13 +260,13 @@ client.on("message", message => {
       .setColor("#000000")
       .setDescription(`
 ${prefix}play ⇏ لتشغيل أغنية برآبط أو بأسم
-${prefix}skip ⇏ لتجآوز الأغنية الحآلية
-${prefix}stop ⇏ إيقآف الأغنية مؤقتا
-${prefix}resume ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
-${prefix}vol ⇏ لتغيير درجة الصوت 100 - 0
-${prefix}leave⇏ لإخرآج البوت من الروم
+${prefix}تخطي ⇏ لتجآوز الأغنية الحآلية
+${prefix}ايقاف ⇏ إيقآف الأغنية مؤقتا
+${prefix}تشغيل ⇏ لموآصلة الإغنية بعد إيقآفهآ مؤقتا
+${prefix}صوت ⇏ لتغيير درجة الصوت 100 - 0
+${prefix}انقلع⇏ لإخرآج البوت من الروم
 ${prefix}np ⇏ لمعرفة الأغنية المشغلة حآليا
-${prefix}queue ⇏ لمعرفة قآئمة التشغيل
+${prefix}قائمه التشغيل ⇏ لمعرفة قآئمة التشغيل
  `)
    message.channel.sendEmbed(embed)
    
