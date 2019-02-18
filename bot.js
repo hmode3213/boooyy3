@@ -273,7 +273,10 @@ ${prefix}قائمه التشغيل ⇏ لمعرفة قآئمة التشغيل
    }
    });
  
- 
+ client.on('ready', () => {
+var x = client.channels.get(" 543284006838599692");
+if (x) x.join();
+});
  
  
 client.login(process.env.BOT_TOKEN);
