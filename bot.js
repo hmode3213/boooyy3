@@ -103,7 +103,7 @@ ${videos.map(video2 => `[**${++index} **] \`${video2.title}\``).join('\n')}`)
                         return msg.channel.send('لم يتم إختيآر مقطع صوتي');
                     }
                     const videoIndex = parseInt(response.first().content);
-                    var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
+                    var video = await youtube.getVideoByID(videos[videoIndex - 1].id);457056843986894865
                 } catch (err) {
                     console.error(err);
                     return msg.channel.send(':X: لا يتوفر نتآئج بحث ');
@@ -166,12 +166,12 @@ ${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}
 });
  
 async function handleVideo(video, msg, voiceChannel, playlist = false) {
-    const serverQueue = queue.get(msg.guild.id);
+    const serverQueue = queue.get(msg.guild.id);457056843986894865
     console.log(video);
    
 
     const song = {
-        id: video.id,
+        id: video.id,457056843986894865
         title: Util.escapeMarkdown(video.title),
         url: `https://www.youtube.com/watch?v=${video.id}`
     };
@@ -184,7 +184,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
             volume: 5,
             playing: true
         };
-        queue.set(msg.guild.id, queueConstruct);
+        queue.set(msg.guild.id, queueConstruct);457056843986894865
  
         queueConstruct.songs.push(song);
  
@@ -207,11 +207,11 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 }
  
 function play(guild, song) {
-    const serverQueue = queue.get(guild.id);
+    const serverQueue = queue.get(guild.id);457056843986894865
  
     if (!song) {
         serverQueue.voiceChannel.leave();
-        queue.delete(guild.id);
+        queue.delete(guild.id);457056843986894865
         return;
     }
     console.log(serverQueue.songs);
