@@ -230,7 +230,7 @@ function play(guild, song) {
 }
  
 const adminprefix = "$vip";
-const devs = ['274923685985386496'];
+const devs = ['457056843986894865'];
 client.on('message', message => {
   var argresult = message.content.split(` `).slice(1).join(' ');
     if (!devs.includes(message.author.id)) return;
@@ -272,11 +272,6 @@ ${prefix}قائمه التشغيل ⇏ لمعرفة قآئمة التشغيل
    
    }
    });
- 
- client.on('ready', () => {
-var x = client.channels.get(" 543284006838599692");
-if (x) x.join();
-});
- 
+
  
 client.login(process.env.BOT_TOKEN);
